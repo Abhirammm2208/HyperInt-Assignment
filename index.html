@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maskabutters Chatpata — Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <!-- Animated gradient background -->
+  <div class="gradient-bg"></div>
+  
+  <!-- Header -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo-brand">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M8 12h8M12 8v8"></path>
+        </svg>
+        <span class="brand-name">Maskabutters</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#" class="nav-item">Product</a>
+        <a href="#" class="nav-item">Reviews</a>
+        <a href="#" class="nav-item">About</a>
+        <a href="#products" class="nav-cta">Shop Now</a>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Product Showcase -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Chatpata<br/>Peanut Butter</h1>
+        <p class="hero-subtitle">Experience bold flavors. Premium quality. Real reviews from real people.</p>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-icon">⭐</span>
+            <div>
+              <div class="stat-value" id="avgRating">4.7</div>
+              <div class="stat-label">Avg Rating</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">👥</span>
+            <div>
+              <div class="stat-value" id="totalReviews">385</div>
+              <div class="stat-label">Reviews</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">✓</span>
+            <div>
+              <div class="stat-value" id="verifiedCount">92%</div>
+              <div class="stat-label">Verified</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/chatpata.webp" alt="Maska Chatpata Peanut Butter" class="product-img"/>
+      </div>
+    </div>
+
+    <!-- Live Activity Stream -->
+    <div class="live-stream">
+      <div class="live-badge">
+        <span class="live-dot"></span> Live Activity
+      </div>
+      <div id="liveActivity" class="activity-feed">
+        <div class="activity-item">
+          <span>👁️ 42 people viewing</span>
+        </div>
+        <div class="activity-item">
+          <span>🛒 18 bought today</span>
+        </div>
+        <div class="activity-item">
+          <span>⭐ New 5★ review</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section Title -->
+  <section class="review-header">
+    <div class="header-text">
+      <h2>What Our Community Says</h2>
+      <p>Scroll through real experiences from verified buyers</p>
+    </div>
+    <div class="filter-controls">
+      <select id="ratingFilter" class="filter-select">
+        <option value="all">All Ratings</option>
+        <option value="5">⭐⭐⭐⭐⭐ Only</option>
+        <option value="4">⭐⭐⭐⭐ & Up</option>
+        <option value="3">⭐⭐⭐ & Up</option>
+      </select>
+      <select id="sortBy" class="filter-select">
+        <option value="recent">Most Recent</option>
+        <option value="helpful">Most Helpful</option>
+        <option value="high">Highest Rated</option>
+        <option value="low">Lowest Rated</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Tab Navigation -->
+  <section class="tabs-nav">
+    <button class="tab-btn active" data-tab="grid">
+      <span class="tab-icon">⊞</span> Grid View
+    </button>
+    <button class="tab-btn" data-tab="timeline">
+      <span class="tab-icon">≡</span> Timeline
+    </button>
+    <button class="tab-btn" data-tab="carousel">
+      <span class="tab-icon">▶</span> Highlights
+    </button>
+  </section>
+
+  <main class="reviews-container">
+    <!-- Grid Variant -->
+    <section id="grid" class="view-section active">
+      <div id="gridContainer" class="reviews-grid"></div>
+    </section>
+
+    <!-- Timeline Variant -->
+    <section id="timeline" class="view-section">
+      <div class="timeline-layout">
+        <div id="timelineContainer" class="timeline-list"></div>
+        <aside class="sidebar">
+          <div class="insight-card">
+            <h3>🔥 Trending Topics</h3>
+            <ul id="topMentions" class="tag-list"></ul>
+          </div>
+          <div class="insight-card">
+            <h3>📊 Rating Distribution</h3>
+            <div id="ratingBreakdown" class="breakdown"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Carousel Variant -->
+    <section id="carousel" class="view-section">
+      <div class="carousel-wrapper">
+        <button class="car-nav prev" aria-label="Previous">←</button>
+        <div id="carouselTrack" class="carousel-track"></div>
+        <button class="car-nav next" aria-label="Next">→</button>
+      </div>
+      <div class="carousel-footer">
+        <div class="car-info">
+          <span id="carAvg" class="car-rating">4.7★</span>
+          <span id="carTotal" class="car-count">385 reviews</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2>Join the Community</h2>
+    <p>Share your Maskabutters experience with thousands of food lovers</p>
+    <button class="cta-btn">Write Your Review</button>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is meant by Oil Separation?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Oil separation in peanut butter is a natural phenomenon, especially in natural or clean-label peanut butters that don't use emulsifiers or hydrogenated oils. This is a universal test of all the nut-butters in the world, if there is oil separation, that means it's 100% natural.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>If we see a pool of oil on the top, what should be our next steps?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>If you see a layer of oil on top of your peanut butter, don't worry—it's completely natural! Just take a clean spoon or butter knife and stir the peanut butter well from the bottom to the top until the oil mixes back in evenly. This happens because we don't use any artificial stabilizers.</p>
+            <p>For easier mixing, you can warm the jar slightly by placing it in warm water for 5–10 minutes. After stirring, store the jar upside down to keep it smooth next time. That's it—enjoy your clean, natural peanut butter just the way nature intended!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How should I store Maska peanut butter?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p><strong>For optimal freshness:</strong></p>
+            <ul>
+              <li>Store in a cool, dry place away from direct sunlight.</li>
+              <li>Refrigeration is optional but can extend shelf life.</li>
+              <li>Always use a clean, dry spoon to prevent contamination.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What makes Maska's products unique?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Maska offers clean-label, healthy snacks crafted with natural ingredients. Our products are free from artificial additives, ensuring both taste and nutrition in every bite.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <h4>Maskabutters</h4>
+        <p>Premium, handcrafted peanut butter for conscious snacking.</p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <a href="https://www.maskabutters.in/products/maska-peanut-butter-chatpata" target="_blank">Official Product</a>
+        <a>Business Enquiry</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a>Design Reference</a>
+        <a>Video Guide</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© 2026 Maskabutters. Designed for Word of Mouth (HyperInt) FE Assignment.</small>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
