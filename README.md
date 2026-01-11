@@ -26,11 +26,6 @@ python -m http.server 8080
 # then open http://localhost:8080/
 ```
 
-## References
-- Original product: https://www.maskabutters.in/products/maska-peanut-butter-chatpata
-- Reference demo: https://face-oil.vercel.app/
-- Reference video: https://drive.google.com/file/d/14AIlKZlodAyH0fAjnrttvXSBr71MOty0/view
-- Submission form: https://forms.gle/zxUWSRqjqe5W6QjH6
 
 ## Notes
 - Content, images, and media are placeholders for demonstration (no proprietary assets copied).
